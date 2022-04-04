@@ -125,7 +125,23 @@ def NAvT(naud):
         print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
         NAvT(naud)
 
-atkārtot()
-valsts()
-naud=float(input("Cik liela ir pasūtījuma summa?\n - "))
-prece()
+def atkal():    
+    jaut=int(input("Vai vēlaties aprēķinat muitu vēlvienam pirkumam? Jā - 1 Nē - 2\n - "))
+    if jaut == 1:
+        print("Tālāk:")
+        Muitas_Kalk()
+    elif jaut == 2:
+        print("Visu labu!")
+        exit()
+    else:
+        print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
+        atkal()
+
+def Muitas_Kalk():
+    atkārtot()
+    valsts()
+    naud = float(input("Cik liela ir pasūtījuma summa?\n - "))
+    prece()
+    atkal()
+
+Muitas_Kalk()
