@@ -1,7 +1,7 @@
 ﻿from math import*
 from sys import*
 
-def atkārtot1():
+def atkārtot():
     min=int(input("Vai pasūtījuma summa pārsneidz 150 eiro? Jā - 1 Nē - 2  "))
     if min == 1:
         print("Tālāk:")
@@ -10,16 +10,29 @@ def atkārtot1():
         exit()
     else:
         print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
-        atkārtot1()
+        atkārtot()
 
-def atkārtot2():
-    kas=int(input("Vai prece ir taborēta vai adīta? Jā - 1 Nē - 2  " ))
-    if kas == 1:
-        print("Adīts_Tamborēts")
-    elif kas == 2:
-        print("Pārējais")
+def valsts():
+    ES = int(input("Vai piegādātājs ir ārpus Eiropas Savienības? Jā - 1 Nē - 2  "))
+    if ES == 1:
+        print("Tālāk:")
+    elif ES == 2:
+        print("muita nav jāmaksā")
+        exit()
     else:
         print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
-        atkārtot2()
-atkārtot1()
-atkārtot2()
+        valsts()
+
+def prece():
+    kas=int(input("Vai prece ir taborēta vai adīta? Jā - 1 Nē - 2  " ))
+    if kas == 1:
+        print("Prece ir adīta vai tamborēta.")
+    elif kas == 2:
+        print("Prece nav adīta vai tamborēta.")
+    else:
+        print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
+        prece()
+
+atkārtot()
+valsts()
+prece()
