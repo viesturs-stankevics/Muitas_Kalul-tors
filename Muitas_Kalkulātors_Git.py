@@ -23,7 +23,7 @@ def valsts():
         print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
         valsts()
 
-def prece():
+def prece(naud):
     kas=int(input("Vai prece ir taborēta vai adīta? Jā - 1 Nē - 2\n - " ))
     if kas == 1:
         print("Prece ir adīta vai tamborēta.")
@@ -33,7 +33,7 @@ def prece():
         NAvT(naud)
     else:
         print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
-        prece()
+        prece(naud)
 
 def AvT(naud):
     AT=int(input('''Lūdzu izvēlaties kurā no kategorijām ietilps jūsu prece:\n
@@ -141,7 +141,7 @@ def Muitas_Kalk():
     atkārtot()
     valsts()
     naud = float(input("Cik liela ir pasūtījuma summa?\n - "))
-    prece()
+    prece(naud)
     atkal()
 
 Muitas_Kalk()
