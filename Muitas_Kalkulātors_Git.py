@@ -1,4 +1,3 @@
-﻿from math import*
 from sys import*
 
 def atkārtot():
@@ -7,6 +6,7 @@ def atkārtot():
         print("Tālāk:")
     elif min == 2:
         print("muita nav jāmaksā")
+        input("Pispiediet Enter lai beigtu programmu")
         exit()
     else:
         print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
@@ -18,6 +18,7 @@ def valsts():
         print("Tālāk:")
     elif ES == 2:
         print("muita nav jāmaksā")
+        input("Pispiediet Enter lai beigtu programmu")
         exit()
     else:
         print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
@@ -41,7 +42,7 @@ def AvT(naud):
  2)Mazu bērnu cimdi; Peldapģerbs kurā 5% no masas vai vairāk;Graudētas kopresijas zeķes no sintētiskajām šķiedrām;\n
  Trikotāžas cimdipirkstaiņi, impregnēti, apvalkoti vai pārklāti ar gumiju - 2\n
  3)Trikotāžas cimdi citādi - 3\n
- 4)Neviens no iepriekš minētajiem - 4\n'''))
+ 4)Neviens no iepriekš minētajiem - 4\n - '''))
     if AT == 1:
         ATplus = naud*10.5/100
         summa = naud+ATplus
@@ -78,7 +79,7 @@ def NAvT(naud):
  4)Šalles, lakati, kaklauti, mantiļas, plīvuri un tamlīdzīgi izstrādājumi - 4\n
  5)Kaklasaites, tauriņi un kravates - 5\n
  6)Cimdi(pirkstaiņi dūraiņi) - 6\n
- 7)Neviens no iepriekš minētajiem - 7\n'''))
+ 7)Neviens no iepriekš minētajiem - 7\n - '''))
     if NAT == 1:
         NATplus = naud*10.5/100
         summa = naud+NATplus
@@ -125,23 +126,19 @@ def NAvT(naud):
         print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
         NAvT(naud)
 
-def atkal():    
-    jaut=int(input("Vai vēlaties aprēķinat muitu vēlvienam pirkumam? Jā - 1 Nē - 2\n - "))
-    if jaut == 1:
-        print("Tālāk:")
-        Muitas_Kalk()
-    elif jaut == 2:
-        print("Visu labu!")
-        exit()
-    else:
-        print ("Lūdzu izvēlaties vienu no piedāvātajā atbilžu opcijām.")
-        atkal()
 
 def Muitas_Kalk():
-    atkārtot()
-    valsts()
-    naud = float(input("Cik liela ir pasūtījuma summa?\n - "))
+    naud = float(input("Cik liela ir preces cena?\n - "))
     prece(naud)
-    atkal()
 
-Muitas_Kalk()
+
+atkārtot()
+valsts()
+n=int(input("Cik kopā pirkumā ir preces?\n - "))
+
+while n>0:
+    Muitas_Kalk()
+    n = n-1
+
+print("Visu labu!")
+input("Pispiediet Enter lai beigtu programmu")
